@@ -16,7 +16,19 @@ namespace Calculatrice_Simplfifié
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            string mes = "Voulez vous rentrer dans la calculatrice", titre = "Calculatrice simplifié ";
+
+            MessageBoxButtons bouttons = MessageBoxButtons.YesNo;
+            DialogResult reponse = MessageBox.Show(mes, titre, bouttons);
+            if (reponse == DialogResult.Yes)
+            {
+                Application.Run(new Form1());
+            }
+            else
+            {
+
+            }
+
         }
     }
 }

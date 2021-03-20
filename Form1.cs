@@ -25,11 +25,13 @@ namespace Calculatrice_Simplfifié
         {
             InitializeComponent();
         }
-        double n1,n2,resultat;
+        double nb1,nb2,resultat;
+        Boolean conversion;
         
-
+        
         private void TBXNb1_TextChanged(object sender, EventArgs e)
         {
+            
             
             
         }
@@ -47,10 +49,21 @@ namespace Calculatrice_Simplfifié
         /// <param name="e"></param>
         private void BTNAddition_Click(object sender, EventArgs e)
         {
-            double.TryParse(TBXNb1.Text, out n1);
-            double.TryParse(TBXNb2.Text, out n2);
-            resultat = Calculatrice.Addition(n1, n2);
-            LABResultat.Text = string.Concat("Résultat de l'addition : ", resultat);
+            conversion = double.TryParse(TBXNb1.Text, out nb1);
+            if (conversion)//Verification si la conversion est bonne pour nb1
+            {
+                conversion = double.TryParse(TBXNb2.Text, out nb2);
+                if (conversion)//Verification si la conversion est bonne pour nb2
+                {
+                    resultat = Calculatrice.Addition(nb1, nb2); //Utilisation de la méthode de la classe Calculatrice pour effectuer l'addition
+                    LABResultat.Text = string.Concat("Résultat de l'addition : ", resultat); //Utilisation du concat pour modifier LabRésultat et afficher un nouveaux texte (string) et le résultat (double) 
+                }
+                else
+                    MessageBox.Show("Erreur de conversion nb2", "Problème conversion", MessageBoxButtons.OK);//Ouverture d'une boite de dialogue qui signale un problème de conversion du nb2
+            }
+            else
+                MessageBox.Show("Erreur de conversion nb1", "Problème conversion", MessageBoxButtons.OK); //Ouverture d'une boite de dialogue qui signale un problème de conversion du nb1
+
         }
         //Ce bouton va permettre de faire une Multiplication en transformant le texte du TBXNb1 et TBXNb2 en double et d'afficher le resultat en modifiant LABResultat
         /// <summary>
@@ -60,10 +73,21 @@ namespace Calculatrice_Simplfifié
         /// <param name="e"></param>
         private void BTNMulti_Click(object sender, EventArgs e)
         {
-            double.TryParse(TBXNb1.Text, out n1);
-            double.TryParse(TBXNb2.Text, out n2);
-            resultat = Calculatrice.Multiplication(n1, n2);
-            LABResultat.Text = string.Concat("Résultat de l'addition : ", resultat);
+            conversion = double.TryParse(TBXNb1.Text, out nb1);
+            if (conversion)//Verification si la conversion est bonne pour nb1
+            {
+                conversion = double.TryParse(TBXNb2.Text, out nb2);
+                if (conversion) //Verification si la conversion est bonne pour nb2
+                {
+                    resultat = Calculatrice.Multiplication(nb1, nb2); // Utilisation de la méthode de la classe Calculatrice pour effectuer la multiplication
+                    LABResultat.Text = string.Concat("Résultat de l'addition : ", resultat); //Utilisation du concat pour modifier LabRésultat et afficher un nouveaux texte (string) et le résultat (double) 
+                }
+                else
+                    MessageBox.Show("Erreur de conversion nb2", "Problème conversion", MessageBoxButtons.OK);//Ouverture d'une boite de dialogue qui signale un problème de conversion du nb2
+            }
+            else
+                MessageBox.Show("Erreur de conversion nb1", "Problème conversion", MessageBoxButtons.OK);//Ouverture d'une boite de dialogue qui signale un problème de conversion du nb1
+
         }
         //Ce bouton va permettre de faire une Soustraction en transformant le texte du TBXNb1 et TBXNb2 en double et d'afficher le resultat en modifiant LABResultat
         /// <summary>
@@ -73,10 +97,21 @@ namespace Calculatrice_Simplfifié
         /// <param name="e"></param>
         private void BTNSoustraction_Click(object sender, EventArgs e)
         {
-            double.TryParse(TBXNb1.Text, out n1);
-            double.TryParse(TBXNb2.Text, out n2);
-            resultat = Calculatrice.Soustraction(n1, n2);
-            LABResultat.Text = string.Concat("Résultat de l'addition : ", resultat);
+            conversion = double.TryParse(TBXNb1.Text, out nb1);
+            if (conversion) //Verification si la conversion est bonne pour nb1
+            {
+                conversion = double.TryParse(TBXNb2.Text, out nb2);
+                if (conversion) //Verification si la conversion est bonne pour nb2
+                {
+                    resultat = Calculatrice.Soustraction(nb1, nb2); // Utilisation de la méthode de la classe Calculatrice pour effectuer la soustraction
+                    LABResultat.Text = string.Concat("Résultat de l'addition : ", resultat); //Utilisation du concat pour modifier LabRésultat et afficher un nouveaux texte (string) et le résultat (double) 
+                }
+                else
+                    MessageBox.Show("Erreur de conversion nb2", "Problème conversion", MessageBoxButtons.OK);//Ouverture d'une boite de dialogue qui signale un problème de conversion du nb2
+            }
+            else
+                MessageBox.Show("Erreur de conversion nb1", "Problème conversion", MessageBoxButtons.OK); //Ouverture d'une boite de dialogue qui signale un problème de conversion du nb1
+
         }
 
         //Ce bouton va permettre de faire une Division en transformant le texte du TBXNb1 et TBXNb2 en double et d'afficher le resultat en modifiant LABResultat
@@ -87,10 +122,21 @@ namespace Calculatrice_Simplfifié
         /// <param name="e"></param>
         private void BTNDiv_Click(object sender, EventArgs e)
         {
-            double.TryParse(TBXNb1.Text, out n1);
-            double.TryParse(TBXNb2.Text, out n2);
-            resultat = Calculatrice.Division(n1, n2);
-            LABResultat.Text = string.Concat("Résultat de l'addition : ", resultat);
+
+            conversion = double.TryParse(TBXNb1.Text, out nb1);
+            if (conversion)//Verification si la conversion est bonne pour nb1
+            {
+                conversion = double.TryParse(TBXNb2.Text, out nb2);
+                if (conversion)//Verification si la conversion est bonne pour nb2
+                {
+                    resultat = Calculatrice.Division(nb1, nb2); //Utilisation de la méthode de la classe Calculatrice pour effectuer la division
+                    LABResultat.Text = string.Concat("Résultat de l'addition : ", resultat); //Utilisation du concat pour modifier LabRésultat et afficher un nouveaux texte (string) et le résultat (double) 
+                }
+                else
+                    MessageBox.Show("Erreur de conversion nb2", "Problème conversion", MessageBoxButtons.OK);//Ouverture d'une boite de dialogue qui signale un problème de conversion du nb2
+            }
+            else
+                MessageBox.Show("Erreur de conversion nb1", "Problème conversion", MessageBoxButtons.OK);//Ouverture d'une boite de dialogue qui signale un problème de conversion du nb1
         }
 
         private void LABResultat_Click(object sender, EventArgs e)

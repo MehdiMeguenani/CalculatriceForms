@@ -61,7 +61,10 @@ namespace Projet_Calculatrice
         static public double Division(Double nb1, Double nb2)
         {
             if (nb2 == 0)
-                throw new DivideByZeroException();
+            {
+                throw new DivideByZeroException("Pas possible");
+            }
+                
             return nb1 / nb2;
         }
 

@@ -36,6 +36,8 @@ namespace Calculatrice_Simplfifié
             this.BTNMulti = new System.Windows.Forms.Button();
             this.BTNDiv = new System.Windows.Forms.Button();
             this.LABResultat = new System.Windows.Forms.Label();
+            
+               
             this.SuspendLayout();
             // 
             // TBXNb1
