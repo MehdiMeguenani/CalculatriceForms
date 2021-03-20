@@ -31,15 +31,12 @@ namespace Calculatrice_Simplfifié
         
         private void TBXNb1_TextChanged(object sender, EventArgs e)
         {
-            
-            
-            
+          TBXNb1.Clear();
         }
 
         private void TBXNb2_TextChanged(object sender, EventArgs e)
         {
-
-            
+            TBXNb2.Clear();
         }
         //Ce bouton va permettre de faire une addition en transformant le texte du TBXNb1 et TBXNb2 en double et d'afficher le resultat en modifiant LABResultat
         /// <summary>
@@ -79,8 +76,8 @@ namespace Calculatrice_Simplfifié
                 conversion = double.TryParse(TBXNb2.Text, out nb2);
                 if (conversion) //Verification si la conversion est bonne pour nb2
                 {
-                    resultat = Calculatrice.Multiplication(nb1, nb2); // Utilisation de la méthode de la classe Calculatrice pour effectuer la multiplication
-                    LABResultat.Text = string.Concat("Résultat de l'addition : ", resultat); //Utilisation du concat pour modifier LabRésultat et afficher un nouveaux texte (string) et le résultat (double) 
+                   resultat = Calculatrice.Multiplication(nb1, nb2); // Utilisation de la méthode de la classe Calculatrice pour effectuer la multiplication
+                   LABResultat.Text = string.Concat("Résultat de l'addition : ", resultat); //Utilisation du concat pour modifier LabRésultat et afficher un nouveaux texte (string) et le résultat (double) 
                 }
                 else
                     MessageBox.Show("Erreur de conversion nb2", "Problème conversion", MessageBoxButtons.OK);//Ouverture d'une boite de dialogue qui signale un problème de conversion du nb2

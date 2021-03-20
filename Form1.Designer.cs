@@ -36,18 +36,17 @@ namespace Calculatrice_Simplfifié
             this.BTNMulti = new System.Windows.Forms.Button();
             this.BTNDiv = new System.Windows.Forms.Button();
             this.LABResultat = new System.Windows.Forms.Label();
-            
-               
             this.SuspendLayout();
             // 
             // TBXNb1
             // 
+            this.TBXNb1.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.TBXNb1.Location = new System.Drawing.Point(50, 39);
             this.TBXNb1.Name = "TBXNb1";
             this.TBXNb1.Size = new System.Drawing.Size(129, 20);
             this.TBXNb1.TabIndex = 0;
             this.TBXNb1.Text = "Entrez un premier Nombre";
-            this.TBXNb1.TextChanged += new System.EventHandler(this.TBXNb1_TextChanged);
+            this.TBXNb1.Click += new System.EventHandler(this.TBXNb1_TextChanged);
             // 
             // TBXNb2
             // 
@@ -56,7 +55,7 @@ namespace Calculatrice_Simplfifié
             this.TBXNb2.Size = new System.Drawing.Size(129, 20);
             this.TBXNb2.TabIndex = 1;
             this.TBXNb2.Text = "Entrez un second Nombre";
-            this.TBXNb2.TextChanged += new System.EventHandler(this.TBXNb2_TextChanged);
+            this.TBXNb2.Click += new System.EventHandler(this.TBXNb2_TextChanged);
             // 
             // BTNAddition
             // 
